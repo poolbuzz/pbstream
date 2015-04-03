@@ -1,0 +1,16 @@
+
+
+0.0.5
+- Check the IP for number of instances, Updated the Icon, EMail IPs
+
+0.0.4
+- Check login file opened or not
+
+0.0.3
+- Change the addon to license service
+
+0.0.2
+- Automatically Update Login details in PBStream Licence userdata
+
+0.0.1
+- Initial Release
