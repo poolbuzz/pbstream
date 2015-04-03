@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+    <!-- General -->
+    <category id="general" label="32010">
+        <setting id="debug" type="bool" label="32100" default="false"/>
+        <setting id="username" type="text" default="Username" label="32101"/>
+        <setting id="password" type="text" option="hidden" default="Password" label="32102" />
+        <setting id="Name" type="text" default="FirstName LastName" label="32103"/>
+        <setting id="EMail" type="text" default="EMail" label="32104"/>
+    </category>
+</settings>
