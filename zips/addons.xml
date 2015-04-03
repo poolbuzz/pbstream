@@ -1,1 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="plugin.video.pbstream" name="PBStream" version="0.0.2" provider-name="Poolbuzz">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+  	<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+  	<summary>PBStream addons to watch media from all over subcontinent</summary>
+		<description>PBStream addons to watch media from all over subcontinent</description>
+		<disclaimer>No media content is hosted or streamed by the makers of this addon. Some parts of this addon may not be legal in your country of residence - please check with your local laws before installing.</disclaimer>
+    <platform>all</platform>
+		<language>en</language>
+		<license>GPL</license>
+    <website>http://www.poolbuzz.com/pbstream</website>
+    <source>https://github.com/poolbuzz/pbstream/plugin.video.pbstream/</source>
+    <forum>http://www.poolbuzz.com/pbstream/forum</forum>
+    <email>pbstream@poolbuzz.com</email>
+  </extension>
+</addon>
 
+<addon id="repository.pbstream" name="PBStream Repository" version="1.0.0" provider-name="Poolbuzz">
+	<extension point="xbmc.addon.repository" name="PBStream Repository">
+		<info compressed="false">https://github.com/poolbuzz/pbstream/raw/master/zips/addons.xml</info>
+		<checksum>https://github.com/poolbuzz/pbstream/raw/master/zips/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.github.com/poolbuzz/pbstream/master/zips/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>PBStream Repository to watch media from all over subcontinent</summary>
+		<description>PBStream Repository to watch media from all over subcontinent</description>
+		<disclaimer>No media content is hosted or streamed by the makers of this Repo. Some parts of this Repo may not be legal in your country of residence - please check with your local laws before installing.</disclaimer>
+    	<platform>all</platform>
+		<language>en</language>
+		<license>GPL</license>
+    	<website>http://www.poolbuzz.com/pbstream</website>
+    	<source>https://github.com/poolbuzz/pbstream/</source>
+    	<forum>http://www.poolbuzz.com/pbstream/forum</forum>
+    	<email>pbstream@poolbuzz.com</email>
+	</extension>
+</addon>
+
+<addon id="service.pbstream-lic" name="PBStream License" version="0.0.5" provider-name="Poolbuzz">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.service" library="default.py" start="login" />
+  <extension point="xbmc.addon.metadata">
+  	<summary lang="en">Auto Check for Login on Play</summary>
+   	<description lang="en">Auto Check for Login on Playback start.[CR][CR]Icon credits goes to Poolbuzz http://www.poolbuzz.com</description>
+    <platform>all</platform>
+    <language>en</language>
+    <license>GPL</license>
+    <website>http://www.poolbuzz.com/pbstream</website>
+    <email>pbstream@poolbuzz.com</email>
+  </extension>
+</addon>
+</addons>
