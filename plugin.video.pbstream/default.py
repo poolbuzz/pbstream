@@ -48,7 +48,7 @@ elif mode[0] == 'folder':
     	#xbmcplugin.addDirectoryItem(handle=addon_handle, url=MyTVDemo_YTube, listitem=li)
     	#xbmcplugin.endOfDirectory(addon_handle)
     if (foldername == "Folder Two"):
-    	video_id = 'yBFXhPfVHmc&list=PLeXfhADycn_MONok_zviLmBk-YAWg0Ij6'
-    	MySongList = 'plugin://plugin.video.youtube/?action=play_video&videoid=%s' % video_id
+    	playlist_id = 'PLeXfhADycn_MONok_zviLmBk-YAWg0Ij6'
+    	MySongList = 'plugin://plugin.video.youtube/play/?playlist_id=%s&order=shuffle' % playlist_id
     	util.playMedia("MySongList", icon, MySongList)
     	#xbmcplugin.endOfDirectory(addon_handle)

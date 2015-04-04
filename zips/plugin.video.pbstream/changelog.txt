@@ -1,3 +1,6 @@
+0.0.3
+- Added PBStream Demo and Sample Youtube Playlist
+
 0.0.2
 - Updated Icon and fanart
 
