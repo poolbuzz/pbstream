@@ -1,3 +1,6 @@
+0.0.6
+- Check license once everyday
+
 0.0.5
 - Check the IP for number of instances, Updated the Icon, EMail IPs
 
