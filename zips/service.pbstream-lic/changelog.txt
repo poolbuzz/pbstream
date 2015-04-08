@@ -1,3 +1,6 @@
+0.0.7
+- Check IP only if it is defined, compress login data
+
 0.0.6
 - Check license once everyday
 
