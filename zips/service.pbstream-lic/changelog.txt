@@ -1,3 +1,6 @@
+0.0.8
+- Send EMail before expiry date, no date in license file, no IP check for LifeTime subscription
+
 0.0.7
 - Check IP only if it is defined, compress login data
 
