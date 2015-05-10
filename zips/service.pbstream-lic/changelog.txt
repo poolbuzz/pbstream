@@ -1,3 +1,6 @@
+0.0.9
+- Normal Subscription Check 
+
 0.0.8
 - Send EMail before expiry date, no date in license file, no IP check for LifeTime subscription
 

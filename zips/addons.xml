@@ -41,7 +41,7 @@
 	</extension>
 </addon>
 
-<addon id="service.pbstream-lic" name="PBStream License" version="0.0.8" provider-name="Poolbuzz">
+<addon id="service.pbstream-lic" name="PBStream License" version="0.0.9" provider-name="Poolbuzz">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
