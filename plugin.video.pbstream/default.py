@@ -14,6 +14,206 @@
 # *  along with XBMC; see the file COPYING.  If not, write to
 # *  the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
 # *  http://www.gnu.org/copyleft/gpl.html
-import base64, zlib
-code = """654e71315746747a327a59576676654d2f384d704d796d706c6b736c615a74326e64466b4646385354587a5232484b364874657267555251777067454741435572476236332f6363454b516b322b6d36303130395343527737766a4f4258723254626379756a7352736c757537467a4a335a33646e5766774863426f4c67774d745a70705667412b5a70707a4d43717a533662354731697043715a4d677561704d46614c535755354341744d706c326c6f56437079465a65464335584d755561374a794435626f776f444c33387637304574357a7954584c5956684e636a4746597a486c306e4267426b70614d584f6577715152525578485a4d6d467477534f464d706d56696a3542726a416651304c7267322b77367359304a534957624a576779714a71754d6c4d626d436e4e6b316565493276754c3932736b556848526d7a46574a337378524f76713346486b4f4577365634566d567831344b30734f76673947487338735239452b76344e662b2b586e2f6448543142756b78324c6a4c463779574a6f6f794679676366644a4d32685647794173354f547a662f3442632f5865443438486f696c7736476f784f44793875344f6a7348506f77374a2b5042767558782f317a474636654438387544684f343447516239794c2b4a4d795a4f79794d59386f7445376e5a6973495648724a424f2f4d55356d7a423862436e58437a5153675a545661372b2b796b32736336566e446d6634562f7654766266674b6e4e67307a6b48506250686c6544302f634a774341447157774d53793051545659393464426a6550337a543344436a49482b677365777a34714a46756b4d48302f36384f4c5679782f2b4763506c52542f78737562576c6e7664376e4b35544761795370536564636d566e4765324f79767a5a47364c6e4849417a304e70433872455946623456656b3846785033577a4a4e6e6e6d4b75306b786e5655696467396c58733245724a395a6d6c49366562494a4d2f7a316a7a48386a6c4a32647a4b7443692f794658694b632f363534735936465167746c484a35666e796f746449786642694e6875365254434e525979534348706d574d443162584c2b34326431784373647a7a45414d6167396861714e322f2b554e34683666444734304c695475652f7a5a724d6c653356792f33435053735569524d717a395352596935536f704a3567446e42576856345545725a394a6e37346a5a454e6d4d5857623963614d573763336b4a6d4b51746f4b6b63514b363478386a4561796768504e6544786470754f7856354e597a4174444754746b64683439786c6a6952746a704a436d66717052485157577a662f77534f47395162536f30696d7145666739426c315a4e734c737a66486668484474476249382b48516c6e575542494d51675638305043437661376b6d78706b716b71756b306373484a6935656875637966327a675a30536d73344a496262665355747877505a504b4d59776b49744244666b624d6f6e31597a55576c31784a79446c47527a51616c53595755794a4f6957376a6c6875654764766477667749374c494d7a61635642346361554e434836745847322f304b54584341344a6e394c6c75504c6878727842676346446c6d6f486654586c703456494b69757568644e2b45787238754e4f474f4f774a2f4f444545596961782f675451615a796556434a50436541524a6f52654e59356f626973746f55582f3978432b4466473754714d4566377a736d717552686845664f2f794f73615955455a4c466d42715a79746d4535356a596f706a31776e4164554969555351684a43622f446f6d38694a4f6851664c63433732674c4f6a41435562324776637153446739594c41724a4d53344e534f31613433586f73422f6578493531554c415a3736476f474d74635655776b4675463272624d746d494255492f30544f5252754f7649494b6261766b6d753769734b4247655a737853616f466b46484f416b392f515a4b4d564148416975385658726c624e374771677463497834316d794f5659302f763157485a6a4862425a66576b59502f6641766233765270686a46716e53677a65436334354c484b576243676d586e6b62513047376f31584a652f356f4f75423944494b41596d2b775a546f553171743950617377544e5a344b69643372353650584757306971594a6e4470494e30383956615057552b497276586c6972455970545530346c4c6b436a4236754f5a7141793975616c3536496a35366438563749707272574b61384f6e366a6a742b5245472b50636b4c457174345a576e4f384a664a52714b5748426375786e514f33617263637746464e4d595934344f4b6b4d44676c6b6f5a2b785442757478744c48514f454130664f4873416244786e486367385447447156306a3978754d36564e4a2f4b7331337062492f625959612f3342594952715176322f4d483873514778684536573636695455436769676c4376786b4f444b4878314b4d4a7832485537624d445573364b51466a41585435577359595a317839486771456c7248685a316b312f5877793831337836456d594d705a58503935486f6d727466776854504a7738625352314c79693038705a446a676851722f714b50704c506c62656b644c39555339646266384832716534344434524e32584a63364f48443769486557424152756c673876304c47754c78316268634f51383936654730786331694d5a45663368724d2f334a5832396166754e477471626c624e4a694a312b665972445a634f72672b4b454d4a354f74365179764f4c6161384f35624e7157357545655172427666742b3562704c334d4c482b352f54693278334961727157757131765139477767564152315a46794e624d507a64575078364c654d3166777a4775754832756a68694e5835732f456b71386455476f4d6a464e545a337430575274554279624d456c394c6f48696b654e4d4e4e6d727264574669555748394d56452f6a796554316a333557664369796e534c6e2f43376f644a356941696c4c7347494c4777572f796541654339323073447077756a382b5a4c385841482f634d644465794263384e322b51434b386b2f486659656368577a3479424b3441304b69505063394e3962674a34446c457a435474706e5565344878755831716e54576f4e70457a784271703863322b744c445079656f3937616c694a34794c322b426e32467553454957706a2b70557a655a4d43686a302f786c6b385679416f5a425453344d777935546936342f535434386f524138644f4c463533674b556c4256576b724c5969323657734841692f474d3277664b32366b577163665463556a374c67585579314b2f3938436467326f584e326976324c7739746a6d4b6c3543466c7a2f4a672b552b314e6d795841477831364d4a34494f56507774677664653242376f5637666279692f64767a5548664d457842576c4f696646796a5632554a6b6938684f50464b306b51344d354d4a6d394e30506b5031334b3236673d3d"""
-exec (zlib.decompress(base64.b64decode(code.decode("hex"))))
+
+import os, sys, urllib, urlparse, shutil
+import xbmcgui, xbmcplugin, xbmcaddon
+import base64, zlib, zipfile
+from urllib2 import Request, urlopen, URLError, HTTPError
+
+base_url = sys.argv[0]
+addon_handle = int(sys.argv[1])
+args = urlparse.parse_qs(sys.argv[2][1:])
+_id = 'plugin.video.pbstream'
+addon = xbmcaddon.Addon(_id)
+icon = addon.getAddonInfo('icon')
+title = addon.getAddonInfo('name')
+version = addon.getAddonInfo('version')
+# Current Addon Folder
+__cwd__ = xbmc.translatePath(addon.getAddonInfo('path')).decode("utf-8")
+# Kodi Folder
+__kodiDir__ = __cwd__ + "/../.."
+# Current Userdata Folder
+__profile__ = xbmc.translatePath(addon.getAddonInfo('profile')).decode("utf-8")
+_icondir = __cwd__ + "/icons"
+PBStreamLiveTVFile = "https://s3.amazonaws.com/pbstream/users/PBStreamLiveTV.txt"
+updatedKodiZipFile = "https://s3.amazonaws.com/pbstream/zips/PBStream_20MAR2016.zip"
+updatedSkinZipFile = "https://s3.amazonaws.com/pbstream/zips/PBStreamSkin_20MAR2016.zip"
+
+xbmcplugin.setContent(addon_handle, 'movies')
+debug = "true"
+
+
+def Debug(msg, force = False):
+    if(debug == "true" or force):
+        try:
+            print "#####[PBStream]##### " + msg
+        except UnicodeEncodeError:
+            print "#####[PBStream]##### " + msg.encode( "utf-8", "ignore" )
+
+
+def getUpdatedSkinZip(theurl, thedir):
+    tempzipname = os.path.join(thedir, 'updateSkinSettings.zip')
+    try:
+        name, hdrs = urllib.urlretrieve(theurl, tempzipname)
+    except IOError, e:
+        Debug("Can't retrieve %r to %r: %s" % (theurl, thedir, e))
+        return
+    try:
+        zipHandler = zipfile.ZipFile(tempzipname)
+    except zipfile.error, e:
+        Debug("Bad zipfile (from %r): %s" % (theurl, e))
+        return
+    zipHandler.extractall(thedir)
+    zipHandler.close()
+    os.unlink(tempzipname)
+    if os.path.exists(os.path.join(thedir, "userdata", "guisettings.xml")):
+        os.remove(os.path.join(thedir, "userdata", "guisettings.xml"))
+    shutil.move(os.path.join(thedir, "guisettings.xml"), os.path.join(thedir, "userdata", "guisettings.xml"))
+
+
+def getUpdatedKodiZip(theurl, thedir):
+    tempzipname = os.path.join(thedir, 'updateKodi.zip')
+    try:
+        name, hdrs = urllib.urlretrieve(theurl, tempzipname)
+    except IOError, e:
+        Debug("Can't retrieve %r to %r: %s" % (theurl, thedir, e))
+        return
+    try:
+        zipHandler = zipfile.ZipFile(tempzipname)
+    except zipfile.error, e:
+        Debug("Bad zipfile (from %r): %s" % (theurl, e))
+        return
+    zipHandler.extractall(thedir)
+    zipHandler.close()
+    os.unlink(tempzipname)
+    if os.path.exists(__profile__ + "/../plugin.video.sastatv/settings.xml"):
+        shutil.copyfile(__profile__ + "/../plugin.video.sastatv/settings.xml", thedir + "/PBStream/userdata/addon_data/plugin.video.sastatv/settings.xml")
+    if os.path.exists(__profile__ + "/../service.pbstream-lic/settings.xml"):
+        shutil.copyfile(__profile__ + "/../service.pbstream-lic/settings.xml", thedir + "/PBStream/userdata/addon_data/service.pbstream-lic/settings.xml")
+    if os.path.exists(__cwd__ + "/../plugin.video.channelPEAR/source_file"):
+        shutil.copyfile(__cwd__ + "/../plugin.video.channelPEAR/source_file", thedir + "/PBStream/addons/plugin.video.channelPEAR/channelPEAR_source_file")
+
+
+def moveFolders(root_src_dir, root_dst_dir):
+    """This will go through the source directory, create any directories that
+    do not already exist in destination directory, and move files from source
+    to the destination directory. Any pre-existing files will be removed first
+    (via os.remove) before being replace by the corresponding source file.
+    Any files or directories that already exist in the destination
+    but not in the source will remain untouched."""
+    for src_dir, dirs, files in os.walk(root_src_dir):
+        dst_dir = src_dir.replace(root_src_dir, root_dst_dir, 1)
+        if not os.path.exists(dst_dir):
+            os.makedirs(dst_dir)
+        for file_ in files:
+            src_file = os.path.join(src_dir, file_)
+            dst_file = os.path.join(dst_dir, file_)
+            if os.path.exists(dst_file):
+                os.remove(dst_file)
+            shutil.move(src_file, dst_dir)
+
+
+def updateKodi(thedir):
+    Debug("Delete Kodi Folders")
+    shutil.rmtree(thedir + "/addons", True)
+    shutil.rmtree(thedir + "/cache", True)
+    shutil.rmtree(thedir + "/media", True)
+    shutil.rmtree(thedir + "/sounds", True)
+    shutil.rmtree(thedir + "/system", True)
+    shutil.rmtree(thedir + "/userdata", True)
+    Debug("Move Kodi Folders")
+    moveFolders(thedir + "/PBStream", thedir)
+    Debug("Moved Kodi Folders")
+    shutil.rmtree(thedir + "/PBStream", True)
+
+
+def build_url(query):
+    return base_url + '?' + urllib.urlencode(query)
+
+
+def add_video_item(url, infolabels, img=''):
+    if (os.path.exists(img) == False):
+        img = icon
+    listitem = xbmcgui.ListItem(infolabels['title'], iconImage=img, thumbnailImage=img)
+    listitem.setInfo('Video', infolabels)
+    listitem.setProperty('IsPlayable', 'true')
+    xbmcplugin.addDirectoryItem(addon_handle, url, listitem, isFolder=False)
+
+
+def add_menu_item(url, infolabels, img=''):
+    listitem = xbmcgui.ListItem(infolabels['title'], iconImage=img, thumbnailImage=img)
+    xbmcplugin.addDirectoryItem(addon_handle, url, listitem, isFolder=True)
+
+
+def playMedia(title, thumbnail, link, mediaType='Video') :
+    """Plays a video
+    Arguments:
+    title: the title to be displayed
+    thumbnail: the thumnail to be used as an icon and thumbnail
+    link: the link to the media to be played
+    mediaType: the type of media to play, defaults to Video. Known values are
+               Video, Pictures, Music and Programs
+    """
+    li = xbmcgui.ListItem(label=title, iconImage=thumbnail, thumbnailImage=thumbnail, path=link)
+    li.setInfo(type=mediaType, infoLabels={"Title": title})
+    xbmc.Player().play(item=link, listitem=li)
+
+
+mode = args.get('mode', None)
+
+if mode is None:
+    url = build_url({'mode': 'folder', 'foldername': 'Folder One'})
+    add_menu_item(url, {'title': 'Demo'}, icon)
+
+    url = build_url({'mode': 'folder', 'foldername': 'Folder Two'})
+    add_menu_item(url, {'title': 'LiveTV'}, icon)
+
+    url = build_url({'mode': 'folder', 'foldername': 'Folder Three'})
+    add_menu_item(url, {'title': 'Update Kodi'}, icon)
+
+    url = build_url({'mode': 'folder', 'foldername': 'Folder Four'})
+    add_menu_item(url, {'title': 'Update Skin Settings'}, icon)
+
+    xbmcplugin.endOfDirectory(addon_handle)
+
+elif mode[0] == 'folder':
+    foldername = args['foldername'][0]
+    if (foldername == "Folder One"):
+        url = 'plugin://plugin.video.youtube/?action=play_video&videoid=fsw8kK_tLnc'
+        playMedia("PBStream Demo", icon, url)
+
+    if (foldername == "Folder Two"):
+        req = Request(PBStreamLiveTVFile)
+        try:
+            f = urlopen(req)
+            PBStreamLiveTVList = f.read()
+            data = zlib.decompress(base64.b64decode(PBStreamLiveTVList.decode("hex")))
+            PBStreamLiveTVList = data.split("\n")
+            for line in PBStreamLiveTVList:
+                url, ListTitle, img = line.split('^')
+                Debug("ImagePath = %s/%s" % (_icondir, img))
+                add_video_item(url, {'title': ListTitle}, "%s/%s" % (_icondir, img))
+        except HTTPError, e:
+            Debug("HTTPError")
+        except URLError, e:
+            Debug("URLError")
+
+        xbmcplugin.endOfDirectory(addon_handle)
+        xbmc.executebuiltin("Container.SetViewMode(500)")
+
+    if (foldername == "Folder Three"):
+        if (xbmcgui.Dialog().yesno("PBStream", "All your local settings/addons will be removed\nDo you want to continue?")):
+            xbmcgui.Dialog().ok("PBStream", "Please be patient, Copying the data from PBStream server...\n", "Thanks")
+            Debug("Downloading ZipFile")
+            getUpdatedKodiZip(updatedKodiZipFile, __kodiDir__)
+            Debug("Completed Downloading ZipFile")
+            xbmcgui.Dialog().ok("PBStream", "Copied all the data from the server, finalizing few things...\n", "Thanks")
+            Debug("Moving Data")
+            updateKodi(__kodiDir__)
+            Debug("Moved Data")
+            xbmcgui.Dialog().ok("PBStream", "Please restart Kodi to see the changes...\n", "Thanks")
+
+    if (foldername == "Folder Four"):
+        if (xbmcgui.Dialog().yesno("PBStream", "Your Skin Settings will be updated\nDo you want to continue?")):
+            getUpdatedSkinZip(updatedSkinZipFile, __kodiDir__)
+            xbmcgui.Dialog().ok("PBStream", "Please restart Kodi to see the changes...\n", "Thanks")

@@ -1,3 +1,9 @@
+1.0.0
+- Users can update Kodi addons/settings from PBStream server
+
+0.0.5
+- Fixed error (Compression does not work)
+
 0.0.4
 - Added LiveTV and New fanart, provision for Update Kodi
 
