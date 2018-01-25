@@ -1,3 +1,6 @@
+1.1.0
+- Search Telugu/Hindi Movies and Load 4 Servers
+
 1.0.0
 - Users can update Kodi addons/settings from PBStream server
 
